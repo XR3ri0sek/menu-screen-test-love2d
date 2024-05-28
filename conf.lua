@@ -2,7 +2,7 @@ function love.conf(t)
     t.console = false
 
     --Window
-    t.window.title = "Menu Screen Test"
+    t.window.title = "Traumatic Night"
     t.window.icon = nil
     t.window.width = 1280
     t.window.height = 720
@@ -21,7 +21,7 @@ function love.conf(t)
     t.modules.mouse = true
     t.modules.physics = true
     t.modules.sound = true
-    t.modules.system = false
+    t.modules.system = true
     t.modules.thread = true
     t.modules.timer = true
     t.modules.touch = true

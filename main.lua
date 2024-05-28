@@ -1,12 +1,13 @@
 tween = require 'modules/tween'
 
-debug = false
+debug = true
 
 numbertween = {
 	menusize = 0
 }
 
 menu_font = love.graphics.newFont("fonts/gGuarantee.ttf",20)
+debug_font = love.graphics.newFont("fonts/Inconsolata.ttf",15)
 title_font = love.graphics.newFont("fonts/BebasNeue.otf",80)
 
 function love.load()
@@ -35,11 +36,11 @@ function love.update(dt)
 	function love.keypressed(key, scancode, isrepeat)
 		if key == "space" then
 			if menuOption == 1 then
-
+				print("game starting")
 			elseif menuOption == 2 then
-				
+				print("settings")
 			elseif menuOption == 3 then
-
+				love.event.quit()
 			end
 		end
 
@@ -106,20 +107,18 @@ function love.update(dt)
 	end
 end
 
+--//Draw the menu
 function love.draw()
-	--FPS
-	if debug == true then
-		love.graphics.setColor(1, 1, 1)
-		love.graphics.print("FPS: "..love.timer.getFPS(), 10, 10)
-	
-		love.graphics.setColor(1, 1, 1)
-		love.graphics.print(menuOption, 10,26)
-	end
+	love.graphics.setFont(debug_font)
+	love.graphics.setColor(1,1,1)
+	love.graphics.print("Pixel Engine 1.0 (demo)", 2, 2)
+	love.graphics.print("fps: "..love.timer.getFPS(), 2, 17)
+	love.graphics.print("menuOption: "..menuOption, 2, 33)
 
 	--Creating Menu Title
 	love.graphics.setFont(title_font)
 	love.graphics.setColor(1, 1, 1)
-	love.graphics.printf("Menu Screen Test", 20, 230, 800)
+	love.graphics.printf("Traumatic Night", 20, 230, 800)
 
 	--Creating Menu Line
 	love.graphics.setColor(1, 1, 1)
